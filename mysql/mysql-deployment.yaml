@@ -9,7 +9,7 @@ spec:
       targetPort: 8081
   selector:
     app: mysql
-  clusterIP: None
+  # clusterIP: None
 ---
 apiVersion: apps/v1
 kind: Deployment
