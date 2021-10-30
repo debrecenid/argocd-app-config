@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/debrecenid/argocd-app-config.git
     targetRevision: HEAD
-    path: mysql
+    path: postgres
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
