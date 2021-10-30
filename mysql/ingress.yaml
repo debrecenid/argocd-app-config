@@ -5,13 +5,15 @@ metadata:
   # annotations:
   #   nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx
   rules:
-    - http:
+    - host: mysql
+      http:
         paths:
-          - path: /
-            pathType: Prefix
-            backend:
+          - backend:
               service:
-                name: mysql-service
+                name: ms-payment-quoting
                 port:
                   number: 3306
+            path: /
+            pathType: ImplementationSpecific
