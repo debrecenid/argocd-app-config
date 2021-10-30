@@ -1,21 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  annotations:
-    cert-manager.io/cluster-issuer: issuer
-  name: minimal-ingress
+  name: mysql-ingress
   # annotations:
   #   nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  ingressClassName: nginx
   rules:
-    - host: mysql
-      http:
+    - http:
         paths:
-          - backend:
+          - path: /
+            pathType: Prefix
+            backend:
               service:
-                name: mysql-service
+                name: mysql
                 port:
                   number: 3306
-            path: /
-            pathType: ImplementationSpecific
