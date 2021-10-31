@@ -33,8 +33,11 @@ spec:
                   name: mongodb-secret
                   key: mongo-root-password
           volumeMounts:
-            - name: es-persistent-storage
-              mountPath: /var/lib/data
+            - mountPath: /dev/shm
+              name: dshm
+            - mountPath: /asd/mongo
+              name: data
+              subPath: null
       volumes:
         - emptyDir:
             medium: Memory
