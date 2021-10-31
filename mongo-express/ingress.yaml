@@ -32,7 +32,6 @@ metadata:
     app.kubernetes.io/name: mongo-express
     app.kubernetes.io/version: 1.16.0
     argocd.argoproj.io/instance: mongo-express
-    helm.sh/chart: mongo-express-0.2.0
   name: mongo-express
   namespace: myapp
 spec:
