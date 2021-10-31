@@ -29,6 +29,8 @@ metadata:
   name: minimal-ingress
   labels:
     app: mongo-express
+  annotations:
+    cert-manager.io/cluster-issuer: issuer
   # annotations:
   #   nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
