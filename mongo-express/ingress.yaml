@@ -1,15 +1,15 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  annotations:
-    cert-manager.io/cluster-issuer: issuer
+  # annotations:
+  #   cert-manager.io/cluster-issuer: issuer
   labels:
-    app.kubernetes.io/instance: mongo-express
-    app.kubernetes.io/name: mongo-express
-    argocd.argoproj.io/instance: mongo-express
+    # app.kubernetes.io/instance: mongo-express
+    # app.kubernetes.io/name: mongo-express
+    # argocd.argoproj.io/instance: mongo-express
     app: mongo-express
   name: minimal-ingress
-  namespace: myapp
+  # namespace: myapp
 spec:
   ingressClassName: nginx
   rules:
