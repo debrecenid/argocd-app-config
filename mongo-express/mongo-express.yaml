@@ -4,6 +4,7 @@ metadata:
   name: mongo-express
   labels:
     app: mongo-express
+    app.kubernetes.io/instance: mongo-express
 spec:
   replicas: 1
   selector:
