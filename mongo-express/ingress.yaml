@@ -8,8 +8,8 @@ metadata:
     app.kubernetes.io/name: mongo-express
     argocd.argoproj.io/instance: mongo-express
     app: mongo-express
-  name: ms-payment-quoting
-  namespace: app
+  name: minimal-ingress
+  namespace: myapp
 spec:
   ingressClassName: nginx
   rules:
