@@ -5,7 +5,6 @@ metadata:
   labels:
     app.kubernetes.io/component: primary
     app.kubernetes.io/instance: postgres
-    app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: postgresql
     argocd.argoproj.io/instance: postgres
   name: postgres-postgresql
@@ -23,7 +22,6 @@ spec:
       labels:
         app.kubernetes.io/component: primary
         app.kubernetes.io/instance: postgres
-        app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/name: postgresql
         role: primary
       name: postgres-postgresql

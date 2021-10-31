@@ -1,7 +1,8 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
-  name: mongodb-deployment
+  name: mongodb-statefulset
+  namespace: myapp
   labels:
     app: mongodb
 spec:
@@ -34,9 +35,20 @@ spec:
             - name: es-persistent-storage
               mountPath: /var/lib/data
       volumes:
-        - name: es-persistent-storage
-          persistentVolumeClaim:
-            claimName: mypvc
+        - emptyDir:
+            medium: Memory
+          name: dshm
+  updateStrategy:
+    type: RollingUpdate
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 8Gi
 
 ---
 apiVersion: v1
