@@ -42,7 +42,7 @@ spec:
         paths:
           - backend:
               service:
-                name: ms-payment-quoting
+                name: mongo-express
                 port:
                   number: 8081
             path: /
